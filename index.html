@@ -4,11 +4,17 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
     <title>Quick Tip</title>
   </head>
   <body>
-    <main>
+    <main id="container">
       <h1>Qucik Tip</h1>
       <section>
         <div class="bill">
@@ -20,7 +26,7 @@
             <label for="tipInput">Select tip</label>
             <span id="tipPercent">0%</span>
           </div>
-          <input type="range" value="0" id="tipInput" />
+          <input type="range" value="0" id="tipInput" class="range" />
         </div>
 
         <div class="space-between">
@@ -40,7 +46,14 @@
             <label for="splitInput">Split</label>
             <span id="splitValue">1 person</span>
           </div>
-          <input type="range" min="1" max="10" value="1" id="splitInput" />
+          <input
+            type="range"
+            min="1"
+            max="10"
+            value="1"
+            id="splitInput"
+            class="range"
+          />
         </div>
         <div class="space-between">
           <span>Bill each</span>
@@ -52,5 +65,16 @@
         </div>
       </section>
     </main>
+
+    <script>
+      function update() {
+        let bill = document.getElementById("yourBill").value;
+        let tipPercent = document.getElementById("tipInput").value;
+        let split = document.getElementById("splitInput").value;
+      }
+
+      document.getElementById("container");
+      container.addEventListener("input", update);
+    </script>
   </body>
 </html>
